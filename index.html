@@ -12,8 +12,14 @@
 
          function translate() {
              finalPhrase = input.value;
+             finalPhrase = finalPhrase.replace("fucking", "bloody");
              finalPhrase = finalPhrase.replace("friend", "mate");
              finalPhrase = finalPhrase.replace("buddy", "bruv");
+             finalPhrase = finalPhrase.replace("very", "proper");
+             finalPhrase = finalPhrase.replace("guy", "bloke");
+             finalPhrase = finalPhrase.replace("dollar", "quid");
+             finalPhrase = finalPhrase.replace("bye", "ta-ta!");
+             finalPhrase = finalPhrase.replace("nonesense", "poppycock");
              finalPhrase = finalPhrase.concat(" Innit?");
              output.value = phrase.concat(finalPhrase);
          }
