@@ -1,4 +1,6 @@
 <html>
+    <h1>English to British translator</h1>
+    <p>write your phrase and hit translate, works best if you don't capitalize</p>
     <input type="text" size="50" id="input" />
     <button id="translate-button">translate</button>
     <input type="text" size="50" readonly="readonly" id="output" />
@@ -7,14 +9,22 @@
          var input = document.getElementById("input");
          var output = document.getElementById("output");
          var translateButton = document.getElementById("translate-button");
-         var phrase = "Oi guvna ";
          var finalPhrase = "";
 
          function translate() {
              finalPhrase = input.value;
              finalPhrase = finalPhrase.replace("How are you?", "Alright?");
+             finalPhrase = finalPhrase.replace("how are you?", "alright?");
+             finalPhrase = finalPhrase.replace("Hello", "Oi guvna");
+             finalPhrase = finalPhrase.replace("hello", "oi guvna");
              finalPhrase = finalPhrase.replace("fucking", "bloody");
+             finalPhrase = finalPhrase.replace("fancy", "posh");
+             finalPhrase = finalPhrase.replace("stupid", "dim");
+             finalPhrase = finalPhrase.replace("steal", "nick");
+             finalPhrase = finalPhrase.replace("thank you", "cheers");
+             finalPhrase = finalPhrase.replace("cool", "hunky-dory");
              finalPhrase = finalPhrase.replace("bullshit", "bollocks");
+             finalPhrase = finalPhrase.replace("shit", "bollocks");
              finalPhrase = finalPhrase.replace("beautiful", "smashing");
              finalPhrase = finalPhrase.replace("great", "brilliant");
              finalPhrase = finalPhrase.replace("dodgy", "strange");
@@ -22,13 +32,14 @@
              finalPhrase = finalPhrase.replace("sad", "gutted");
              finalPhrase = finalPhrase.replace("friend", "mate");
              finalPhrase = finalPhrase.replace("buddy", "bruv");
+             finalPhrase = finalPhrase.replace("annoyed", "miffed");
              finalPhrase = finalPhrase.replace("very", "proper");
              finalPhrase = finalPhrase.replace("guy", "bloke");
              finalPhrase = finalPhrase.replace("dollar", "quid");
              finalPhrase = finalPhrase.replace("bye", "ta-ta!");
              finalPhrase = finalPhrase.replace("nonesense", "poppycock");
              finalPhrase = finalPhrase.concat(" Innit?");
-             output.value = phrase.concat(finalPhrase);
+             output.value = finalPhrase;
          }
          translateButton.addEventListener("click", translate);
      });
