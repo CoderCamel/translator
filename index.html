@@ -7,12 +7,19 @@
          var input = document.getElementById("input");
          var output = document.getElementById("output");
          var translateButton = document.getElementById("translate-button");
-         var phrase = "Oi ";
+         var phrase = "Oi guvna ";
          var finalPhrase = "";
 
          function translate() {
              finalPhrase = input.value;
+             finalPhrase = finalPhrase.replace("How are you?", "Alright?");
              finalPhrase = finalPhrase.replace("fucking", "bloody");
+             finalPhrase = finalPhrase.replace("bullshit", "bollocks");
+             finalPhrase = finalPhrase.replace("beautiful", "smashing");
+             finalPhrase = finalPhrase.replace("great", "brilliant");
+             finalPhrase = finalPhrase.replace("dodgy", "strange");
+             finalPhrase = finalPhrase.replace("fuck up", "cock up");
+             finalPhrase = finalPhrase.replace("sad", "gutted");
              finalPhrase = finalPhrase.replace("friend", "mate");
              finalPhrase = finalPhrase.replace("buddy", "bruv");
              finalPhrase = finalPhrase.replace("very", "proper");
