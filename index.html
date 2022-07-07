@@ -1,0 +1,23 @@
+<html>
+    <input type="text" id="input" />
+    <button id="translate-button">translate</button>
+    <input type="text" readonly="readonly" id="output" />
+    <script>
+     document.addEventListener("DOMContentLoaded", function(event) {
+         var input = document.getElementById("input");
+         var output = document.getElementById("output");
+         var translateButton = document.getElementById("translate-button");
+         var phrase = "Oi ";
+         var finalPhrase = "";
+
+         function translate() {
+             finalPhrase = input.value;
+             finalPhrase = finalPhrase.replace("friend", "mate");
+             finalPhrase = finalPhrase.replace("buddy", "bruv");
+             finalPhrase = finalPhrase.concat(" Innit?");
+             output.value = phrase.concat(finalPhrase);
+         }
+         translateButton.addEventListener("click", translate);
+     });
+    </script>
+</html>
