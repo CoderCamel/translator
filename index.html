@@ -1,18 +1,19 @@
 <html>
     <h1>English to British translator</h1>
-    <p>write your phrase and hit translate, works best if you don't capitalize</p>
+    <p>Write your phrase and hit translate!</p>
     <p><input type="text" size="120" id="input" /></p>
     <button id="translate-button">translate</button>
     <p><input type="text" size="120" readonly="readonly" id="output" /></p>
     <script>
      document.addEventListener("DOMContentLoaded", function(event) {
-         var input = document.getElementById("input");
-         var output = document.getElementById("output");
-         var translateButton = document.getElementById("translate-button");
-         var finalPhrase = "";
+         const input = document.getElementById("input");
+         const output = document.getElementById("output");
+         const translateButton = document.getElementById("translate-button");
+         let finalPhrase = "";
 
          function translate() {
              finalPhrase = input.value;
+             finalPhrase = finalPhrase.toLowerCase();
              finalPhrase = finalPhrase.replace("How are you?", "Alright?");
              finalPhrase = finalPhrase.replace("how are you?", "alright?");
              finalPhrase = finalPhrase.replace("Hello", "Oi guvna");
@@ -37,7 +38,9 @@
              finalPhrase = finalPhrase.replace("guy", "bloke");
              finalPhrase = finalPhrase.replace("dollar", "quid");
              finalPhrase = finalPhrase.replace("bye", "ta-ta!");
-             finalPhrase = finalPhrase.replace("nonesense", "poppycock");
+             finalPhrase = finalPhrase.replace("nonsense", "poppycock");
+             finalPhrase = finalPhrase.replace("apartment", "flat");
+             finalPhrase = finalPhrase.replace("tired", "knackered");
              finalPhrase = finalPhrase.concat(" Innit?");
              output.value = finalPhrase;
          }
