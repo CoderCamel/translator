@@ -63,5 +63,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         output.value = finalPhrase;
     }
 
+    input.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+            translateButton.click();
+        }
+    });
+
     translateButton.addEventListener("click", translate);
 });
