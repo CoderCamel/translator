@@ -56,8 +56,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     function translate() {
         finalPhrase = input.value;
         for (let i in dictionary) {
-            let regex = new RegExp(i, "gi");    // Puts "/" and "/gi" around the string to make the replacement global and ignore capitalization
-            finalPhrase = finalPhrase.replace(regex, dictionary[i]);
+            const regexString = `\\b${i}\\b(?!-)`;    // Words only match if they are not preceded or followed by letters. So "ass" will not trigger a match with "bass" or "assassin". Hyphen after also disqualifies.
+            const regexObject = new RegExp(regexString, "gi");
+            finalPhrase = finalPhrase.replace(regexObject, dictionary[i]);
         }
         finalPhrase = finalPhrase.concat(" Innit?");
         output.value = finalPhrase;
